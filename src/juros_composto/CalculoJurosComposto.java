@@ -17,8 +17,8 @@ public class CalculoJurosComposto {
 		
 		for (int mes = 1; valorDivida.doubleValue() > 0.0; mes++) {
 			
-			var rendimento = BigDecimal.valueOf(100).add(JUROS)
-					.divide(BigDecimal.valueOf(100)).setScale((QUANTIDADE_CASAS_DECIMAIS + 2), RoundingMode.HALF_UP);
+			var rendimento = JUROS.divide(BigDecimal.valueOf(100))
+					.add(BigDecimal.valueOf(1)).setScale((QUANTIDADE_CASAS_DECIMAIS + 2), RoundingMode.HALF_UP);
 			
 			valorDivida = valorDivida.multiply(rendimento);
 			
